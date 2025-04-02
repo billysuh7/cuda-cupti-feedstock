@@ -158,8 +158,8 @@ outputs:
 
   - name: cuda-cupti-doc
     files:
-      - targets/{{ target_name }}/{{ name }}/samples
-      - targets/{{ target_name }}/{{ name }}/doc
+      - targets/{{ target_name }}/cuda-cupti/samples
+      - targets/{{ target_name }}/cuda-cupti/doc
     requirements:
       build:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
@@ -171,8 +171,8 @@ outputs:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
     test:
       commands:
-        - test -d $PREFIX/targets/{{ target_name }}/{{ name }}/samples  # [linux]
-        - test -d $PREFIX/targets/{{ target_name }}/{{ name }}/doc      # [linux]
+        - test -d $PREFIX/targets/{{ target_name }}/cuda-cupti/samples  # [linux]
+        - test -d $PREFIX/targets/{{ target_name }}/cuda-cupti/doc      # [linux]
     about:
       home: https://developer.nvidia.com/cuda-toolkit
       license_file: LICENSE
