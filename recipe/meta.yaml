@@ -25,7 +25,6 @@ source:
 
 build:
   number: 1
-  binary_relocation: false
   skip: true  # [osx or ppc64le]
 
 requirements:
@@ -35,6 +34,8 @@ requirements:
 
 outputs:
   - name: cuda-cupti
+    build:
+      binary_relocation: false
     files:
       - lib/libcupti*.so.*                    # [linux]
       - targets/{{ target_name }}/lib/*.so.*  # [linux]
